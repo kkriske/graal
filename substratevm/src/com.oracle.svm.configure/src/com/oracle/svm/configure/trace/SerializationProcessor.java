@@ -51,7 +51,7 @@ public class SerializationProcessor extends AbstractProcessor {
         List<?> args = (List<?>) entry.get("args");
         if ("ObjectStreamClass.<init>".equals(function)) {
             expectSize(args, 2);
-            serializationConfiguration.add((String) args.get(0), (String) args.get(1));
+            serializationConfiguration.register((String) args.get(0), (String) args.get(1));
         }
     }
 }
